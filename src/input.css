@@ -2,25 +2,11 @@
 
 @import "tailwindcss";
 @font-face {
-  font-family: "Vela Sans";
-  src: url("/fonts/VelaSans-Regular.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
+  font-family: "Vela Sans Gx";
+  src: url("/fonts/vela-sans-gx.ttf") format("truetype");
+  font-weight: 1 999;
 }
 
-@font-face {
-  font-family: "Vela Sans";
-  src: url("/fonts/VelaSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Vela Sans";
-  src: url("/fonts/VelaSans-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
 @theme {
   /* Colors */
   --color-primary: #2b2e3a;
@@ -32,7 +18,7 @@
   --color-brand-green: #4ea35b;
   --color-brand-yellow: #ffdd2d;
   --color-brand-red: #ef3124;
-  --font-vela: "Vela Sans";
+  --font-vela: "Vela Sans Gx";
   /* Font family */
   --font-nunito: "Nunito Sans";
   /* Font size */
