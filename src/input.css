@@ -1,7 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 
 @import "tailwindcss";
+@font-face {
+  font-family: "Vela Sans";
+  src: url("/fonts/VelaSans-Regular.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "Vela Sans";
+  src: url("/fonts/VelaSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Vela Sans";
+  src: url("/fonts/VelaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
 @theme {
   /* Colors */
   --color-primary: #2b2e3a;
@@ -13,6 +32,7 @@
   --color-brand-green: #4ea35b;
   --color-brand-yellow: #ffdd2d;
   --color-brand-red: #ef3124;
+  --font-vela: "Vela Sans";
   /* Font family */
   --font-nunito: "Nunito Sans";
   /* Font size */
@@ -32,7 +52,7 @@
   }
 
   body {
-    @apply bg-brand-gray-100 text-brand-gray-800 font-nunito overflow-x-hidden;
+    @apply bg-brand-gray-100 text-brand-gray-800 overflow-x-hidden font-vela;
   }
 
   button {
@@ -42,6 +62,7 @@
   p {
     @apply tracking-[1px];
   }
+
   .text-xs,
   .text-sm,
   .text-base,
@@ -83,6 +104,13 @@
 @utility hover-opacity-80 {
   @apply transition duration-200 hover:opacity-80;
 }
+@utility container-base {
+  @apply w-full max-w-235 xl:max-w-340 mx-auto px-5;
+}
+
+@utility backdrop-filter {
+  backdrop-filter: blur(40px);
+}
 
 .no-scroll::-webkit-scrollbar {
   @apply !size-0;
@@ -96,7 +124,8 @@
     linear-gradient(90deg, #ffffff 0%, #b0b0b0 50%, #ffffff 100%);
   background-clip: padding-box, border-box;
   background-origin: border-box;
-  background-size: 200% 100%; /* 2x kenglik */
+  background-size: 200% 100%;
+  /* 2x kenglik */
   animation: rotate-border 3s linear infinite;
 }
 
@@ -104,6 +133,7 @@
   0% {
     background-position: 0 0, 0 0;
   }
+
   100% {
     background-position: 200% 0, 200% 0;
   }
@@ -122,4 +152,8 @@
   transform: translate(-50%, -50%);
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.285 6.708l-11.145 11.145-5.145-5.145 1.415-1.414 3.729 3.728 9.732-9.732z"/></svg>');
   @apply bg-contain bg-no-repeat absolute top-1/2 left-1/2 size-4;
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-in-out forwards, scaleIn 0.2s ease-in-out forwards;
 }
