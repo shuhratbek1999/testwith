@@ -18,6 +18,33 @@
 }
 
 @layer base {
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: static !important;
+    inset: auto !important;
+    margin: 0 !important;
+
+    /* KATTA HITBOXNI YO‘QOTADI */
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    max-width: 36px !important;
+    max-height: 36px !important;
+    padding: 0 !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    /* background: none !important; */
+    border: none !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none !important;
+  }
   html {
     @apply scroll-smooth;
   }
