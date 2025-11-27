@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <div class="content bg-black w-full">
+    <div class="content bg-black w-full font-vela">
       <main
         class="container-base flex flex-col w-full xl:flex-row xl:h-screen xl:items-center gap-10 pb-20 lg:pb-0"
       >
@@ -18,42 +18,53 @@
           Креативы <span class="font-light">которые продают</span>
         </h1>
         <div
-          class="relative top-0 lg:top-4 w-full h-[480px] md:w-[410px] md:h-[569px] lg:w-[410px] lg:h-[569px] rounded-[10px] max-w-full max-h-full overflow-x-hidden"
+          class="relative box-gradient-border lg:mt-6 w-full max-w-[410px] h-[480px] md:h-[569px] lg:h-[569px] rounded-[10px] overflow-hidden"
         >
-          <div
-            class="absolute inset-0 rounded-[10px] p-px bg-[linear-gradient(180deg,#fefefe,#989898)]"
-          ></div>
-          <div
-            class="relative z-10 rounded-[10px] bg-[#11121E] w-full h-full p-6"
-          >
+          <!-- BACKGROUND -->
+          <div class="absolute inset-0 bg-[#11121E] z-10 rounded-[10px]"></div>
+
+          <!-- ORANGE GLOW -->
+          <div class="absolute inset-0 z-20 pointer-events-none rounded-[10px]">
             <div
-              class="absolute top-0 right-0 rounded-full bg-[radial-gradient(circle,#ffff,#ffff_50%)] blur-[300px] pointer-events-none"
+              class="absolute top-0 right-0 w-full h-[300px] bg-[radial-gradient(60%_80%_at_100%_0%,rgba(235,98,25,0.63),rgba(235,98,25,0))]"
             ></div>
-            <div class="flex gap-2 mb-6 absolute top-[25px] left-[33px]">
+          </div>
+
+          <!-- BORDER (faqat left-gradient-border ishlaydi) -->
+
+          <!-- MAIN CONTENT -->
+          <div class="relative z-40 w-full h-full p-6">
+            <!-- Buttons -->
+            <div
+              class="absolute top-[25px] left-6 lg:left-[33px] flex gap-2 z-50"
+            >
               <button
-                class="px-4 py-2 rounded-lg bg-white/10 text-white font-semibold backdrop-blur-lg"
+                class="px-4 py-2 rounded-lg bg-white/10 text-white font-semibold"
               >
                 Креативы
               </button>
               <button
-                class="px-4 py-2 rounded-lg bg-white/5 text-white font-semibold backdrop-blur-lg"
+                class="px-4 py-2 rounded-lg bg-white/5 text-white font-semibold"
               >
                 Баннеры
               </button>
             </div>
-            <div class="info absolute bottom-10">
-              <img src="./assets/images/line.svg" class="mb-4" alt="" />
-              <h1
-                class="text-white text-[21px] lg:text-main-25 font-bold leading-tight"
-              >
+
+            <!-- TEXT BOTTOM -->
+            <div class="absolute bottom-10 left-6 right-6 z-50">
+              <img src="./assets/images/line.svg" class="mb-4" />
+              <h1 class="text-white text-[21px] lg:text-main-25 font-bold">
                 Не просто красиво —
               </h1>
               <h2
-                class="text-white text-[21px] whitespace-nowrap lg:text-main-25 font-light leading-tight mb-4"
+                class="text-white text-[21px] lg:text-main-25 font-light mb-4 font-vela"
               >
                 действительно эффективно
               </h2>
-              <p class="text-white text-sm md:text-base leading-[160%] mb-6">
+
+              <p
+                class="text-white text-[14px] lg:text-[16px] font-light lg:leading-[160%] mb-6 font-vela"
+              >
                 Каждый баннер, иллюстрация и баннер-заставку в этих кейсах
                 тщательно тестировали на аудитории. Только те креативы, которые
                 показали высокий CTR и конверсию, дошли до финального запуска.
@@ -61,26 +72,22 @@
                 клиентам лиды и продажи.
               </p>
 
-              <button
-                class="px-6 py-3 rounded-md text-white font-semibold shadow-[0_0_16.1px_0_rgba(253,136,6,0.51),inset_0_4px_4px_0_rgba(255,255,255,0.13)] bg-[linear-gradient(257.48deg,#FD8806_25.37%,#DB3F2C_125.31%)]"
-              >
-                Заказать креатив
-              </button>
+              <button class="custom-btn">Заказать креатив</button>
             </div>
           </div>
-          <div
-            class="absolute w-full h-2/3 z-40 top-0 right-0 bg-[radial-gradient(60%_80%_at_100%_0%,rgba(235,98,25,0.63)_0%,rgba(235,98,25,0)_100%)]"
-          ></div>
         </div>
+
         <div class="content w-full lg:w-[850px] relative">
           <h1
             class="font-extrabold text-[33px] leading-[58%] text-white my-8 hidden md:flex"
           >
-            Креативы <span class="font-light">которые продают</span>
+            Креативы <span class="font-light ml-2">которые продают</span>
           </h1>
-          <div class="flex gap-10 flex-nowrap justify-start overflow-x-hidden">
+          <div
+            class="flex gap-10 flex-nowrap justify-start overflow-hidden p-2"
+          >
             <div
-              class="h-auto shrink-0 w-full md:w-1/2 lg:w-[287px] lg:h-[506px] rounded-[10px] z-30 relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] border border-solid border-transparent [border-image-source:linear-gradient(156.15deg,rgba(254,254,254,0.18)_5.68%,rgba(152,152,152,0)_107.95%)] [border-image-slice:1] backdrop-blur-[300px]"
+              class="h-auto shrink-0 card-gradient-border w-full md:w-1/2 lg:w-[287px] lg:h-[506px] rounded-[10px] z-30 relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] backdrop-blur-[300px]"
             >
               <div class="img w-full relative">
                 <img
@@ -100,12 +107,13 @@
                 <h4 class="font-bold text-base text-white mb-2">
                   Мастер класс
                 </h4>
-                <p class="font-normal text-sm text-white">
+                <p class="font-normal text-[14px] text-white">
                   Готовьте вкусно — без сложных рецептов и стресса. Вы
                   приготовите, попробуете и унесёте с собой техники и
                   вдохновение ...
                 </p>
               </div>
+
               <div
                 class="bunner w-[87px] h-[35px] py-2 px-[18px] absolute left-3 top-[13px] bg-[rgba(22,20,35,0.82)] backdrop-blur-xs font-medium text-sm text-white flex items-center justify-center rounded-sm z-10"
               >
@@ -113,7 +121,7 @@
               </div>
             </div>
             <div
-              class="h-[546px] shrink-0 w-full md:w-1/2 lg:w-[287px] lg:h-[506px] rounded-[10px] relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] border border-solid border-transparent [border-image-source:linear-gradient(156.15deg,rgba(254,254,254,0.18)_5.68%,rgba(152,152,152,0)_107.95%)] [border-image-slice:1] backdrop-blur-[300px]"
+              class="h-auto shrink-0 card-gradient-border w-full md:w-1/2 lg:w-[287px] lg:h-[506px] rounded-[10px] z-30 relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] backdrop-blur-[300px]"
             >
               <div class="img w-full relative">
                 <img
@@ -130,22 +138,24 @@
               </div>
 
               <div class="info p-4">
-                <h4 class="font-bold text-base text-white mb-2">
+                <h4 class="font-[700] text-[16px] text-white mb-2">
                   Студия для кулинарии
                 </h4>
-                <p class="font-normal text-sm text-white">
+                <p class="font-normal text-[14px] text-white">
                   Готовьте как профи — в уютном, продуманном пространстве,
                   созданном специально для кулинаров и тех, кто хочет ими стать.
                 </p>
               </div>
+
               <div
-                class="bunner w-[87px] h-[35px] py-2 px-[18px] absolute top-2 bg-[rgba(22,20,35,0.82)] backdrop-blur-xs left-2 font-medium text-sm text-white flex items-center justify-center rounded-sm z-10"
+                class="bunner w-[87px] h-[35px] py-2 px-[18px] absolute left-3 top-[13px] bg-[rgba(22,20,35,0.82)] backdrop-blur-xs font-medium text-sm text-white flex items-center justify-center rounded-sm z-10"
               >
                 Баннер
               </div>
             </div>
+
             <div
-              class="h-[546px] shrink-0 w-full md:w-1/2 lg:w-[287px] lg:h-[506px] overflow-hidden rounded-[10px] relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] border border-solid border-transparent [border-image-source:linear-gradient(156.15deg,rgba(254,254,254,0.18)_5.68%,rgba(152,152,152,0)_107.95%)] [border-image-slice:1] backdrop-blur-[300px]"
+              class="h-auto shrink-0 card-gradient-border w-full md:w-1/2 lg:w-[287px] lg:h-[506px] rounded-[10px] z-30 relative bg-[radial-gradient(50%_100%_at_50%_0%,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.025)_100%)] backdrop-blur-[300px]"
             >
               <div class="img w-full relative">
                 <img
@@ -162,17 +172,18 @@
               </div>
 
               <div class="info p-4">
-                <h4 class="font-bold text-base text-white mb-2">
+                <h4 class="font-bold text-[16px] text-white mb-2">
                   Мастер класс
                 </h4>
-                <p class="font-normal text-sm text-white">
+                <p class="font-normal text-[14px] text-white">
                   Готовьте вкусно — без сложных рецептов и стресса. Вы
                   приготовите, попробуете и унесёте с собой техники и
-                  вдохновение ...
+                  вдохновение.
                 </p>
               </div>
+
               <div
-                class="bunner w-[87px] h-[35px] py-2 px-[18px] absolute top-2 bg-[rgba(22,20,35,0.82)] backdrop-blur-xs left-2 font-medium text-sm text-white flex items-center justify-center rounded-sm z-10"
+                class="bunner w-[87px] h-[35px] py-2 px-[18px] absolute left-3 top-[13px] bg-[rgba(22,20,35,0.82)] backdrop-blur-xs font-medium text-sm text-white flex items-center justify-center rounded-sm z-10"
               >
                 Баннер
               </div>

@@ -1,44 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
-
 @import "tailwindcss";
 @font-face {
-  font-family: "Vela Sans Gx";
-  src: url("/fonts/vela-sans-gx.ttf") format("truetype");
-  font-weight: 1 999;
+  font-family: "VelaSans";
+  src: url("../assets/fonts/VelaSans-GX.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* Tailwind 4 theme extend */
 @theme {
-  /* Colors */
-  --color-primary: #2b2e3a;
-  --color-secondary: #edda9f;
-  --color-brand-gray-100: #f2f2f2;
-  --color-brand-gray-600: #595959;
-  --color-brand-gray-700: #454545;
-  --color-brand-gray-800: #313131;
-  --color-brand-green: #4ea35b;
-  --color-brand-yellow: #ffdd2d;
-  --color-brand-red: #ef3124;
-  --font-vela: "Vela Sans Gx";
-  /* Font family */
-  --font-nunito: "Nunito Sans";
-  /* Font size */
+  --font-vela: "VelaSans";
   --text-main-13: 0.8125rem;
   --text-main-23: 1.4375rem;
   --text-main-40: 2.5rem;
   --text-main-25: 1.5625rem;
   --text-main-50: 3.125rem;
-  /* border radius */
-  --radius-body-30: 1.875rem;
-  --radius-body-60: 3.75rem;
 }
 
 @layer base {
   html {
     @apply scroll-smooth;
-  }
-
-  body {
-    @apply bg-brand-gray-100 text-brand-gray-800 overflow-x-hidden font-vela;
   }
 
   button {
@@ -62,29 +43,68 @@
     @apply !leading-none;
   }
 }
+/* tailwind.css yoki globals.css ichiga qo‘yasan */
+.custom-btn {
+  @apply text-white font-semibold rounded-md px-10 py-[9px] border-0 h-[52px] w-[218px];
+  background: linear-gradient(257.48deg, #fd8806 25.37%, #db3f2c 125.31%);
+  box-shadow: 0px 0px 16.1px rgba(253, 136, 6, 0.51),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.13);
+}
+.card-gradient-border {
+  position: relative;
+}
+
+.card-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  padding: 1px;
+  pointer-events: none;
+
+  background: linear-gradient(
+    156.15deg,
+    rgba(254, 254, 254, 0.18) 5.68%,
+    rgba(152, 152, 152, 0) 107.95%
+  );
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+@layer utilities {
+  .box-gradient-border {
+    position: relative;
+  }
+
+  .box-gradient-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    padding: 0.5px 1.2px;
+
+    /* Gradient border */
+    background: linear-gradient(
+      156.15deg,
+      rgba(254, 254, 254, 0.18) 5.68%,
+      rgba(152, 152, 152, 0) 107.95%
+    );
+
+    /* Mask hack – radius ishlashi uchun */
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+    z-index: 999;
+  }
+}
 
 @utility container-base {
   @apply w-full max-w-335 mx-auto px-3.75 md:px-6.25;
-}
-
-@utility flex-main-center {
-  @apply flex items-center justify-center;
-}
-
-@utility flex-main-between {
-  @apply flex items-center justify-between gap-5 lg:gap-7.5;
-}
-
-@utility flex-main-col-between {
-  @apply flex flex-col justify-between gap-2.5;
-}
-
-@utility hover-prototype-btn {
-  @apply bg-primary text-white transition duration-200 hover:bg-primary/75;
-}
-
-@utility hover-secondayr-btn {
-  @apply bg-secondary text-white transition duration-200 hover:bg-secondary/75;
 }
 
 @utility hover-opacity-80 {
@@ -100,46 +120,4 @@
 
 .no-scroll::-webkit-scrollbar {
   @apply !size-0;
-}
-
-/* border animation */
-.border-btn-2 {
-  border: 2px solid transparent;
-  border-radius: 48px;
-  background-image: linear-gradient(to right, #edda9f, #edda9f),
-    linear-gradient(90deg, #ffffff 0%, #b0b0b0 50%, #ffffff 100%);
-  background-clip: padding-box, border-box;
-  background-origin: border-box;
-  background-size: 200% 100%;
-  /* 2x kenglik */
-  animation: rotate-border 3s linear infinite;
-}
-
-@keyframes rotate-border {
-  0% {
-    background-position: 0 0, 0 0;
-  }
-
-  100% {
-    background-position: 200% 0, 200% 0;
-  }
-}
-
-.checkbox-custom {
-  @apply inline-block relative appearance-none min-w-5 size-6 rounded bg-transparent border border-[#B0B0B0];
-}
-
-.checkbox-custom:checked {
-  @apply bg-black border-transparent;
-}
-
-.checkbox-custom:checked::after {
-  content: "";
-  transform: translate(-50%, -50%);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20.285 6.708l-11.145 11.145-5.145-5.145 1.415-1.414 3.729 3.728 9.732-9.732z"/></svg>');
-  @apply bg-contain bg-no-repeat absolute top-1/2 left-1/2 size-4;
-}
-
-.fade-in {
-  animation: fadeIn 0.2s ease-in-out forwards, scaleIn 0.2s ease-in-out forwards;
 }
