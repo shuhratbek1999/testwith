@@ -555,6 +555,9 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
   }
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
   .text-white {
     color: var(--color-white);
   }
